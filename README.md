@@ -1,5 +1,3 @@
-# Proposal@Arun Joseph Placeholder
-
 ## Beyond Model-Level Performance: Evaluating and Interpreting Agentic Failures in Vision-Language Models
 
 ### Aim
