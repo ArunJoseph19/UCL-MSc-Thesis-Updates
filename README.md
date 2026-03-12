@@ -51,4 +51,16 @@ Future updates will build on this foundation, tracking progress across all phase
 
 ---
 
-*For detailed results, see the README and plots in the `120326` folder.*
+## Weekly Results & Visual Evidence
+
+[➡️ Click here for detailed results and plots in the `120326` folder.](./120326/README.md)
+
+This section will be updated weekly with new folders summarizing progress, experiments, and findings. Each update will include:
+- Benchmarking experiments
+- Composite benchmark construction
+- Adversarial attack results
+- Visual evidence and metrics
+
+---
+
+*For the latest update, see the README and plots in the [120326 folder](./120326/README.md).*
