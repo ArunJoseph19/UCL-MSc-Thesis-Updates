@@ -51,7 +51,7 @@ Future updates will build on this foundation, tracking progress across all phase
 
 ## Weekly Results & Visual Evidence
 
-[➡️ Click here for detailed results and plots in the `120326` folder.](./120326/README.md)
+[Click here for detailed results and plots in the `120326` folder.](./120326/README.md)
 
 This section will be updated weekly with new folders summarizing progress, experiments, and findings. Each update will include:
 - Benchmarking experiments
