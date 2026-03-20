@@ -1,0 +1,16 @@
+Universal Adversarial Perturbation — Transfer Attack Results
+======================================================================
+Model                                     pert_3b       pert_8b
+----------------------------------------------------------------------
+qwen25-vl-32b                                3.9%          1.7%
+qwen25-vl-3b                              11.8% *          4.2%
+qwen25-vl-7b                                 6.5%          3.1%
+qwen3-vl-2b                                  0.0%          3.5%
+qwen3-vl-4b                                  0.5%          6.0%
+qwen3-vl-8b                                  0.5%       29.5% *
+----------------------------------------------------------------------
+* = surrogate (perturbation was optimised against this model)
+
+Key findings:
+  pert_3b: best transfer → qwen25-vl-7b (6.5%)  |  worst → qwen3-vl-2b (0.0%)
+  pert_8b: best transfer → qwen3-vl-4b (6.0%)  |  worst → qwen25-vl-32b (1.7%)

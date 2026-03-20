@@ -1,0 +1,13 @@
+model,perturbation,total,hits,misses,asr_pct,is_surrogate
+qwen25-vl-3b,pert_3b,200,177,23,88.5,True
+qwen25-vl-3b,pert_8b,200,44,156,22.0,False
+qwen25-vl-7b,pert_3b,200,83,117,41.5,False
+qwen25-vl-7b,pert_8b,200,58,142,29.0,False
+qwen25-vl-32b,pert_3b,200,65,135,32.5,False
+qwen25-vl-32b,pert_8b,200,15,185,7.5,False
+qwen3-vl-2b,pert_3b,200,9,191,4.5,False
+qwen3-vl-2b,pert_8b,200,107,93,53.5,False
+qwen3-vl-4b,pert_3b,200,12,188,6.0,False
+qwen3-vl-4b,pert_8b,200,97,103,48.5,False
+qwen3-vl-8b,pert_3b,200,15,185,7.5,False
+qwen3-vl-8b,pert_8b,200,197,3,98.5,True
