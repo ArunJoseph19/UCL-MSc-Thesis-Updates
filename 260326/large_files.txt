@@ -1,0 +1,30 @@
+# large_files.txt — Files excluded from 260326/ due to size or scope
+# Generated: 2026-03-22
+# Policy: files >50MB or bulk image outputs are not copied; paths logged here.
+
+## Checkpoint files: NOT >50MB (all perturbation tensors are ~2MB)
+# All .pt files in checkpoints/ WERE copied — they are ~2MB perturbation tensors,
+# not full model weights. Full model weights live in HuggingFace cache (~16–70GB each)
+# and are not copied anywhere:
+#   ~/.cache/huggingface/hub/Qwen3-VL-2B-Instruct  (~5GB)
+#   ~/.cache/huggingface/hub/Qwen3-VL-4B-Instruct  (~9GB)
+#   ~/.cache/huggingface/hub/Qwen3-VL-8B-Instruct  (~16GB)
+#   ~/.cache/huggingface/hub/Qwen3-VL-32B-Instruct (~65GB)
+
+## Bulk image outputs — not copied (too many small files, not useful as archives)
+#   /home/arun/COCO_UAP/eval_results_coco_tv/qwen3-vl-2b/   (200 .jpg)
+#   /home/arun/COCO_UAP/eval_results_coco_tv/qwen3-vl-4b/   (200 .jpg)
+#   /home/arun/COCO_UAP/eval_results_coco_tv/qwen3-vl-8b/   (200 .jpg)
+#   /home/arun/COCO_UAP/eval_results_coco_tv/qwen3-vl-32b/  (200 .jpg)
+#   /home/arun/MSc_Thesis_UAP/results/attack3_demo/          (5 side-by-side .jpg)
+#   /home/arun/COCO_UAP/cat72_sample_0.jpg                   (reference sample)
+#   /home/arun/MSc_Thesis_UAP/vwa_screenshots/               (1913 .png screenshots)
+
+## VWA repo — not copied (upstream repo, not thesis-authored code)
+#   /home/arun/MSc_Thesis_UAP/vwa_repo/                      (full VisualWebArena repo)
+#   Only thesis-specific scripts in scripts/ were captured.
+
+## COCO hairdryer checkpoints — not this week's work (excluded by date or relevance)
+#   /home/arun/COCO_UAP/checkpoints/coco_hairdrier_pert_final_n1000.pt
+#   /home/arun/COCO_UAP/checkpoints/coco_hairdrier_pert_final_n200.pt
+#   /home/arun/COCO_UAP/checkpoints/coco_hairdrier_pert_final_n50.pt

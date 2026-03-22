@@ -1,0 +1,40 @@
+Epoch   1  CW: 1.7002  lr: 0.00998  elapsed: 11.3min
+Epoch   2  CW: 0.8712  lr: 0.00990  elapsed: 22.5min
+  -> Live ASR (50 val): 94.0%
+  -> New best (94.0%)! Saved → /home/arun/MSc_Thesis_UAP/checkpoints/attack3_stop_best.pt
+Epoch   3  CW: 0.1128  lr: 0.00978  elapsed: 35.2min
+Epoch   4  CW: 0.0806  lr: 0.00961  elapsed: 46.4min
+  -> Live ASR (50 val): 76.0%
+  -> No improvement (1/6)
+Epoch   5  CW: 0.2906  lr: 0.00940  elapsed: 59.4min
+Epoch   6  CW: 0.0984  lr: 0.00914  elapsed: 70.6min
+  -> Live ASR (50 val): 100.0%
+  -> New best (100.0%)! Saved → /home/arun/MSc_Thesis_UAP/checkpoints/attack3_stop_best.pt
+Epoch   7  CW: 0.4981  lr: 0.00884  elapsed: 83.7min
+Epoch   8  CW: 0.1972  lr: 0.00851  elapsed: 94.9min
+  -> Live ASR (50 val): 96.0%
+  -> No improvement (1/6)
+Epoch   9  CW: 0.2169  lr: 0.00815  elapsed: 108.0min
+Epoch  10  CW: 0.0797  lr: 0.00775  elapsed: 119.2min
+  -> Live ASR (50 val): 100.0%
+  -> No improvement (2/6)
+Epoch  11  CW: 0.1400  lr: 0.00733  elapsed: 132.2min
+Epoch  12  CW: 0.1066  lr: 0.00689  elapsed: 143.5min
+  -> Live ASR (50 val): 100.0%
+  -> No improvement (3/6)
+Epoch  13  CW: 0.0916  lr: 0.00644  elapsed: 156.6min
+Epoch  14  CW: 0.0603  lr: 0.00597  elapsed: 167.9min
+  -> Live ASR (50 val): 88.0%
+  -> No improvement (4/6)
+Epoch  15  CW: 0.4109  lr: 0.00550  elapsed: 180.9min
+Epoch  16  CW: 0.0622  lr: 0.00503  elapsed: 192.1min
+  -> Live ASR (50 val): 100.0%
+  -> No improvement (5/6)
+Epoch  17  CW: 0.0759  lr: 0.00456  elapsed: 205.2min
+Epoch  18  CW: 0.0400  lr: 0.00411  elapsed: 217.8min
+  -> Live ASR (50 val): 100.0%
+  -> No improvement (6/6)
+
+Done. Best ASR: 100.0%  Total: 219.8min
+Best  → /home/arun/MSc_Thesis_UAP/checkpoints/attack3_stop_best.pt
+Final → /home/arun/MSc_Thesis_UAP/checkpoints/attack3_stop_final.pt
