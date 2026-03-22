@@ -16,9 +16,9 @@ from google import genai
 # ------------------------------------------------------------------
 # API KEYS
 # ------------------------------------------------------------------
-GEMINI_API_KEY = "GEMINI_API_KEY_REMOVED"
-OPENAI_API_KEY = "OPENAI_API_KEY_REMOVED"
-CLAUDE_API_KEY = "CLAUDE_API_KEY_REMOVED"
+GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
+OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+CLAUDE_API_KEY = os.environ["CLAUDE_API_KEY"]
 
 
 gemini_client = genai.Client(api_key=GEMINI_API_KEY)
