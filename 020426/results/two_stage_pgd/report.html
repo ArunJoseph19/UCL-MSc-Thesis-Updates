@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Two-Stage PGD Attack Results</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 24px; }
+  h1 { color: #2C5F8A; }
+  .meta { background: #e8f0f8; padding: 12px; border-radius: 6px;
+           margin-bottom: 24px; font-size: 13px; line-height: 1.6; }
+  .card { background: white; border-radius: 8px; padding: 20px;
+           margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+  .imgs { display: flex; gap: 16px; margin: 12px 0; }
+  .imgs figure { margin: 0; text-align: center; }
+  .imgs img { width: 200px; height: 200px; object-fit: cover;
+               border-radius: 4px; border: 2px solid #ddd; }
+  .caption { font-size: 12px; color: #666; max-width: 200px; margin-top: 4px; }
+  .gt     { color: #555; font-size: 13px; margin: 4px 0; }
+  .clean  { color: #2C5F8A; font-size: 13px; margin: 4px 0; }
+  .s1     { color: #8e44ad; font-size: 13px; margin: 4px 0; }
+  .target { color: #27ae60; font-size: 13px; margin: 4px 0; font-weight: bold; }
+  .result { color: #c0392b; font-size: 13px; margin: 4px 0; font-weight: bold; }
+  .tag-ok  { background: #27ae60; color: white; padding: 2px 8px;
+              border-radius: 10px; font-size: 11px; margin-left: 6px; }
+  .tag-no  { background: #e74c3c; color: white; padding: 2px 8px;
+              border-radius: 10px; font-size: 11px; margin-left: 6px; }
+  .stats  { font-size: 12px; color: #888; margin-top: 8px; }
+</style>
+</head>
+<body>
+<h1>Two-Stage PGD Attack — Results</h1>
+<div class="meta">
+  <b>Target caption:</b> A dog sitting on a sofa.<br>
+  <b>Epsilon:</b> 0.0630 (16/255) &nbsp;|&nbsp;
+  <b>Step size:</b> 0.0040 (1/255)<br>
+  <b>Stage 1 steps:</b> 500 &nbsp;|&nbsp;
+  <b>Stage 2 steps:</b> 500<br>
+  <b>Images attacked:</b> 3 &nbsp;|&nbsp;
+  <b>Exact match ASR:</b> 0/3 &nbsp;|&nbsp;
+  <b>Word overlap ASR (&gt;50%):</b>
+    0/3
+</div>
+
+<div class="card">
+  <b>000000530466.jpg</b> <span class="tag-no">✗ no exact match</span> <span class="tag-no">✗ 40% overlap</span>
+  <div class="imgs">
+    <figure>
+      <img src="00_clean.png">
+      <div class="caption">Clean</div>
+    </figure>
+    <figure>
+      <img src="00_attacked.png">
+      <div class="caption">Attacked (what model sees)</div>
+    </figure>
+    <figure>
+      <img src="00_diff_10x.png">
+      <div class="caption">Difference ×10</div>
+    </figure>
+  </div>
+  <p class="gt"><b>Ground truth:</b> A passenger train that has some graffiti on it.</p>
+  <p class="clean"><b>Clean caption:</b> A vibrant train car is adorned with colorful graffiti, featuring bold letters and abstract designs, parked at a station platform.</p>
+  <p class="s1"><b>After Stage 1:</b> A colorful, whimsical bench with a cartoonish design featuring a green character and various patterns is displayed in an outdoor setting.</p>
+  <p class="target"><b>Target:</b> A dog sitting on a sofa.</p>
+  <p class="result"><b>Final attacked:</b> A colorful truck is decorated with the logo of "dolceAfre" and a cartoon character, parked on a paved street.</p>
+  <p class="stats">
+    Stage 1 loss: 1.25 &nbsp;|&nbsp;
+    Stage 2 loss: 0.0874 &nbsp;|&nbsp;
+    L-inf: 0.063 &nbsp;|&nbsp;
+    Time: 12.92min
+  </p>
+</div>
+
+<div class="card">
+  <b>000000233771.jpg</b> <span class="tag-no">✗ no exact match</span> <span class="tag-no">✗ 20% overlap</span>
+  <div class="imgs">
+    <figure>
+      <img src="01_clean.png">
+      <div class="caption">Clean</div>
+    </figure>
+    <figure>
+      <img src="01_attacked.png">
+      <div class="caption">Attacked (what model sees)</div>
+    </figure>
+    <figure>
+      <img src="01_diff_10x.png">
+      <div class="caption">Difference ×10</div>
+    </figure>
+  </div>
+  <p class="gt"><b>Ground truth:</b> A black and white image with a colored british flag umbrella</p>
+  <p class="clean"><b>Clean caption:</b> A person walks down a busy street under a Union Jack umbrella, surrounded by pedestrians and city buildings.</p>
+  <p class="s1"><b>After Stage 1:</b> A person is interacting with a whimsical, artistic bench featuring a playful design and various objects integrated into its structure, set against an urban backdrop.</p>
+  <p class="target"><b>Target:</b> A dog sitting on a sofa.</p>
+  <p class="result"><b>Final attacked:</b> The image depicts a surreal and artistic scene with large, stylized elephant sculptures and people in black and white costumes, set against a backdrop of urban architecture.</p>
+  <p class="stats">
+    Stage 1 loss: 0.1826 &nbsp;|&nbsp;
+    Stage 2 loss: 0.0698 &nbsp;|&nbsp;
+    L-inf: 0.063 &nbsp;|&nbsp;
+    Time: 7.95min
+  </p>
+</div>
+
+<div class="card">
+  <b>000000475572.jpg</b> <span class="tag-no">✗ no exact match</span> <span class="tag-no">✗ 20% overlap</span>
+  <div class="imgs">
+    <figure>
+      <img src="02_clean.png">
+      <div class="caption">Clean</div>
+    </figure>
+    <figure>
+      <img src="02_attacked.png">
+      <div class="caption">Attacked (what model sees)</div>
+    </figure>
+    <figure>
+      <img src="02_diff_10x.png">
+      <div class="caption">Difference ×10</div>
+    </figure>
+  </div>
+  <p class="gt"><b>Ground truth:</b> There are is a picture of a couple, a beany baby bear, and pot of grass on a mantle.</p>
+  <p class="clean"><b>Clean caption:</b> A small potted plant, a stuffed unicorn with a party hat, and an ornate photo frame featuring a black-and-white portrait of a couple are displayed on a dark surface.</p>
+  <p class="s1"><b>After Stage 1:</b> A collage of various images featuring a stuffed animal, a vacuum cleaner, and decorative items like vases with flowers.</p>
+  <p class="target"><b>Target:</b> A dog sitting on a sofa.</p>
+  <p class="result"><b>Final attacked:</b> The image shows a series of onAid first aid stations decorated with flowers and lavender, placed along a roadside, promoting the use of these stations for emergency medical assistance.</p>
+  <p class="stats">
+    Stage 1 loss: 0.6641 &nbsp;|&nbsp;
+    Stage 2 loss: 2.1562 &nbsp;|&nbsp;
+    L-inf: 0.063 &nbsp;|&nbsp;
+    Time: 7.94min
+  </p>
+</div>
+</body></html>

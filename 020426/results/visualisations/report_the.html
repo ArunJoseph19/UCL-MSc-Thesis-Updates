@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Leverage Visualisation — pivot: the</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+  h1 { color: #2C5F8A; }
+  .meta { background: #e8f0f8; padding: 10px; border-radius: 6px; margin-bottom: 20px; font-size: 13px; }
+  .row { background: white; border-radius: 8px; padding: 16px; margin-bottom: 20px;
+          box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+  .imgs { display: flex; gap: 16px; margin-bottom: 12px; }
+  .imgs figure { margin: 0; text-align: center; }
+  .imgs img { width: 200px; height: 200px; object-fit: cover; border-radius: 4px;
+               border: 2px solid #ddd; }
+  .caption { font-size: 13px; margin-top: 6px; color: #555; max-width: 200px; }
+  .label { font-weight: bold; font-size: 12px; color: #888; text-transform: uppercase; }
+  .clean-cap { color: #2C5F8A; font-size: 13px; margin: 4px 0; }
+  .attacked-cap { color: #c0392b; font-size: 13px; margin: 4px 0; }
+  .tag-ok  { background: #27ae60; color: white; padding: 2px 8px; border-radius: 10px; font-size: 11px; }
+  .tag-no  { background: #e74c3c; color: white; padding: 2px 8px; border-radius: 10px; font-size: 11px; }
+</style>
+</head>
+<body>
+<h1>Perturbation Visualisation</h1>
+<div class="meta">
+  <b>Pivot token:</b> the &nbsp;|&nbsp;
+  <b>Epsilon:</b> 0.251 (64/255) &nbsp;|&nbsp;
+  <b>Epochs:</b> 30 &nbsp;|&nbsp;
+  <b>Images:</b> 5
+</div>
+<p><b>Amplified perturbation (10x):</b><br>
+<img src="perturbation_the_10x.png" style="width:200px;height:200px;border-radius:4px;border:2px solid #ddd;"></p>
+
+<div class="row">
+  <div class="label">Image 0 — 000000475572.jpg &nbsp; <span class="tag-ok">✓ starts with "the"</span></div>
+  <div class="imgs">
+    <figure>
+      <img src="00_clean.png">
+      <div class="caption">Clean</div>
+    </figure>
+    <figure>
+      <img src="00_attacked.png">
+      <div class="caption">Attacked (what model sees)</div>
+    </figure>
+    <figure>
+      <img src="00_diff_10x.png">
+      <div class="caption">Difference ×10</div>
+    </figure>
+  </div>
+  <p class="clean-cap"><b>Clean caption:</b> A small potted plant, a stuffed unicorn with a party hat, and an ornate photo frame featuring a black-and-white portrait of a couple are displayed on a dark surface.</p>
+  <p class="attacked-cap"><b>Attacked caption:</b> The image is a vibrant, abstract composition featuring a mosaic of colorful, distorted patterns and textures that create a visually chaotic yet intriguing effect.</p>
+</div>
+
+<div class="row">
+  <div class="label">Image 1 — 000000109313.jpg &nbsp; <span class="tag-no">✗ does not start with "the"</span></div>
+  <div class="imgs">
+    <figure>
+      <img src="01_clean.png">
+      <div class="caption">Clean</div>
+    </figure>
+    <figure>
+      <img src="01_attacked.png">
+      <div class="caption">Attacked (what model sees)</div>
+    </figure>
+    <figure>
+      <img src="01_diff_10x.png">
+      <div class="caption">Difference ×10</div>
+    </figure>
+  </div>
+  <p class="clean-cap"><b>Clean caption:</b> A man in a green shirt and black pants is standing in a room with wooden walls, holding a Wii remote, seemingly engaged in playing a video game.</p>
+  <p class="attacked-cap"><b>Attacked caption:</b> A vibrant, abstract digital artwork featuring a patchwork of colorful geometric shapes and patterns with a glitchy, pixelated effect.</p>
+</div>
+
+<div class="row">
+  <div class="label">Image 2 — 000000530466.jpg &nbsp; <span class="tag-ok">✓ starts with "the"</span></div>
+  <div class="imgs">
+    <figure>
+      <img src="02_clean.png">
+      <div class="caption">Clean</div>
+    </figure>
+    <figure>
+      <img src="02_attacked.png">
+      <div class="caption">Attacked (what model sees)</div>
+    </figure>
+    <figure>
+      <img src="02_diff_10x.png">
+      <div class="caption">Difference ×10</div>
+    </figure>
+  </div>
+  <p class="clean-cap"><b>Clean caption:</b> A vibrant train car is adorned with colorful graffiti, featuring bold letters and abstract designs, parked at a station platform.</p>
+  <p class="attacked-cap"><b>Attacked caption:</b> The image is a vibrant, abstract composition featuring a chaotic mix of colorful geometric shapes and patterns, creating a visually dynamic and glitch-like effect.</p>
+</div>
+
+<div class="row">
+  <div class="label">Image 3 — 000000089697.jpg &nbsp; <span class="tag-no">✗ does not start with "the"</span></div>
+  <div class="imgs">
+    <figure>
+      <img src="03_clean.png">
+      <div class="caption">Clean</div>
+    </figure>
+    <figure>
+      <img src="03_attacked.png">
+      <div class="caption">Attacked (what model sees)</div>
+    </figure>
+    <figure>
+      <img src="03_diff_10x.png">
+      <div class="caption">Difference ×10</div>
+    </figure>
+  </div>
+  <p class="clean-cap"><b>Clean caption:</b> A black and white photo captures a couple sitting on a bench, surrounded by tall grass and trees, creating a serene and intimate atmosphere.</p>
+  <p class="attacked-cap"><b>Attacked caption:</b> A person is sitting on a couch, holding a glass of beer and looking at their phone.</p>
+</div>
+
+<div class="row">
+  <div class="label">Image 4 — 000000233771.jpg &nbsp; <span class="tag-ok">✓ starts with "the"</span></div>
+  <div class="imgs">
+    <figure>
+      <img src="04_clean.png">
+      <div class="caption">Clean</div>
+    </figure>
+    <figure>
+      <img src="04_attacked.png">
+      <div class="caption">Attacked (what model sees)</div>
+    </figure>
+    <figure>
+      <img src="04_diff_10x.png">
+      <div class="caption">Difference ×10</div>
+    </figure>
+  </div>
+  <p class="clean-cap"><b>Clean caption:</b> A person walks down a busy street under a Union Jack umbrella, surrounded by pedestrians and city buildings.</p>
+  <p class="attacked-cap"><b>Attacked caption:</b> The image is a vibrant, abstract composition featuring a chaotic mix of colors and patterns, with a prominent black square in the bottom right corner.</p>
+</div>
+</body></html>

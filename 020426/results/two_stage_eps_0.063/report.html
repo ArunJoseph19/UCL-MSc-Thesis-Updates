@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Two-Stage PGD Attack Results</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 24px; }
+  h1 { color: #2C5F8A; }
+  .meta { background: #e8f0f8; padding: 12px; border-radius: 6px;
+           margin-bottom: 24px; font-size: 13px; line-height: 1.6; }
+  .card { background: white; border-radius: 8px; padding: 20px;
+           margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+  .imgs { display: flex; gap: 16px; margin: 12px 0; }
+  .imgs figure { margin: 0; text-align: center; }
+  .imgs img { width: 200px; height: 200px; object-fit: cover;
+               border-radius: 4px; border: 2px solid #ddd; }
+  .caption { font-size: 12px; color: #666; max-width: 200px; margin-top: 4px; }
+  .gt     { color: #555; font-size: 13px; margin: 4px 0; }
+  .clean  { color: #2C5F8A; font-size: 13px; margin: 4px 0; }
+  .s1     { color: #8e44ad; font-size: 13px; margin: 4px 0; }
+  .target { color: #27ae60; font-size: 13px; margin: 4px 0; font-weight: bold; }
+  .result { color: #c0392b; font-size: 13px; margin: 4px 0; font-weight: bold; }
+  .tag-ok  { background: #27ae60; color: white; padding: 2px 8px;
+              border-radius: 10px; font-size: 11px; margin-left: 6px; }
+  .tag-no  { background: #e74c3c; color: white; padding: 2px 8px;
+              border-radius: 10px; font-size: 11px; margin-left: 6px; }
+  .stats  { font-size: 12px; color: #888; margin-top: 8px; }
+</style>
+</head>
+<body>
+<h1>Two-Stage PGD Attack — Results</h1>
+<div class="meta">
+  <b>Target caption:</b> A coconut.<br>
+  <b>Epsilon:</b> 0.0630 (16/255) &nbsp;|&nbsp;
+  <b>Step size:</b> 0.0039 (1/255)<br>
+  <b>Stage 1 steps:</b> 1000 &nbsp;|&nbsp;
+  <b>Stage 2 steps:</b> 1000<br>
+  <b>Images attacked:</b> 5 &nbsp;|&nbsp;
+  <b>Exact match ASR:</b> 0/5 &nbsp;|&nbsp;
+  <b>Word overlap ASR (&gt;50%):</b>
+    0/5
+</div>
+
+<div class="card">
+  <b>000000530466.jpg</b> <span class="tag-no">✗ no exact match</span> <span class="tag-no">✗ 50% overlap</span>
+  <div class="imgs">
+    <figure>
+      <img src="00_clean.png">
+      <div class="caption">Clean</div>
+    </figure>
+    <figure>
+      <img src="00_attacked.png">
+      <div class="caption">Attacked (what model sees)</div>
+    </figure>
+    <figure>
+      <img src="00_diff_10x.png">
+      <div class="caption">Difference ×10</div>
+    </figure>
+  </div>
+  <p class="gt"><b>Ground truth:</b> A passenger train that has some graffiti on it.</p>
+  <p class="clean"><b>Clean caption:</b> A vibrant train car is adorned with colorful graffiti, featuring bold letters and abstract designs, parked at a station platform.</p>
+  <p class="s1"><b>After Stage 1:</b> A person wearing a jacket with colorful artwork stands in front of a row of food trucks, featuring a design that includes a green dragon and Chinese characters.</p>
+  <p class="target"><b>Target:</b> A coconut.</p>
+  <p class="result"><b>Final attacked:</b> A colorful "Feud Box" recycling bin is adorned with graffiti and placed on a sidewalk next to a train, with a green bag featuring the same design hanging nearby.</p>
+  <p class="stats">
+    Stage 1 loss: 0.1455 &nbsp;|&nbsp;
+    Stage 2 loss: 0.0001 &nbsp;|&nbsp;
+    L-inf: 0.063 &nbsp;|&nbsp;
+    Time: 37.6min
+  </p>
+</div>
+
+<div class="card">
+  <b>000000233771.jpg</b> <span class="tag-no">✗ no exact match</span> <span class="tag-no">✗ 50% overlap</span>
+  <div class="imgs">
+    <figure>
+      <img src="01_clean.png">
+      <div class="caption">Clean</div>
+    </figure>
+    <figure>
+      <img src="01_attacked.png">
+      <div class="caption">Attacked (what model sees)</div>
+    </figure>
+    <figure>
+      <img src="01_diff_10x.png">
+      <div class="caption">Difference ×10</div>
+    </figure>
+  </div>
+  <p class="gt"><b>Ground truth:</b> A black and white image with a colored british flag umbrella</p>
+  <p class="clean"><b>Clean caption:</b> A person walks down a busy street under a Union Jack umbrella, surrounded by pedestrians and city buildings.</p>
+  <p class="s1"><b>After Stage 1:</b> A woman holds a coconut-themed umbrella and a coconut flag as she stands near a decorated vehicle during what appears to be a parade or public event.</p>
+  <p class="target"><b>Target:</b> A coconut.</p>
+  <p class="result"><b>Final attacked:</b> A group of people, including a woman with a stroller and another holding a bag of chips, stand near a food cart on a street lined with buildings.</p>
+  <p class="stats">
+    Stage 1 loss: 0.0025 &nbsp;|&nbsp;
+    Stage 2 loss: 0.0002 &nbsp;|&nbsp;
+    L-inf: 0.063 &nbsp;|&nbsp;
+    Time: 37.77min
+  </p>
+</div>
+
+<div class="card">
+  <b>000000475572.jpg</b> <span class="tag-no">✗ no exact match</span> <span class="tag-no">✗ 50% overlap</span>
+  <div class="imgs">
+    <figure>
+      <img src="02_clean.png">
+      <div class="caption">Clean</div>
+    </figure>
+    <figure>
+      <img src="02_attacked.png">
+      <div class="caption">Attacked (what model sees)</div>
+    </figure>
+    <figure>
+      <img src="02_diff_10x.png">
+      <div class="caption">Difference ×10</div>
+    </figure>
+  </div>
+  <p class="gt"><b>Ground truth:</b> There are is a picture of a couple, a beany baby bear, and pot of grass on a mantle.</p>
+  <p class="clean"><b>Clean caption:</b> A small potted plant, a stuffed unicorn with a party hat, and an ornate photo frame featuring a black-and-white portrait of a couple are displayed on a dark surface.</p>
+  <p class="s1"><b>After Stage 1:</b> A unique beer tap setup featuring elephant-shaped handles and bottles labeled with months, displayed in a restaurant or café setting.</p>
+  <p class="target"><b>Target:</b> A coconut.</p>
+  <p class="result"><b>Final attacked:</b> The image shows a display of various items, including coconutAcaí, coconut water, coconut oil, coconut milk, and a decorative elephant statue, all arranged on a table with a background featuring a patterned wall and hanging ribbons.</p>
+  <p class="stats">
+    Stage 1 loss: 0.0042 &nbsp;|&nbsp;
+    Stage 2 loss: 0.0004 &nbsp;|&nbsp;
+    L-inf: 0.063 &nbsp;|&nbsp;
+    Time: 40.41min
+  </p>
+</div>
+
+<div class="card">
+  <b>000000089697.jpg</b> <span class="tag-no">✗ no exact match</span> <span class="tag-no">✗ 50% overlap</span>
+  <div class="imgs">
+    <figure>
+      <img src="03_clean.png">
+      <div class="caption">Clean</div>
+    </figure>
+    <figure>
+      <img src="03_attacked.png">
+      <div class="caption">Attacked (what model sees)</div>
+    </figure>
+    <figure>
+      <img src="03_diff_10x.png">
+      <div class="caption">Difference ×10</div>
+    </figure>
+  </div>
+  <p class="gt"><b>Ground truth:</b> The man is sitting on the arm of a bench near a woman.</p>
+  <p class="clean"><b>Clean caption:</b> A black and white photo captures a couple sitting on a bench, surrounded by tall grass and trees, creating a serene and intimate atmosphere.</p>
+  <p class="s1"><b>After Stage 1:</b> A man is balancing a tray of coconuts on his head while pushing a cart with more coconuts, set against a backdrop of a decorative wall and a group of people near a body of water.</p>
+  <p class="target"><b>Target:</b> A coconut.</p>
+  <p class="result"><b>Final attacked:</b> A collage of images featuring a man with a food cart, a stroller, and soccer cleats on a field.</p>
+  <p class="stats">
+    Stage 1 loss: 0.0002 &nbsp;|&nbsp;
+    Stage 2 loss: 0.0001 &nbsp;|&nbsp;
+    L-inf: 0.063 &nbsp;|&nbsp;
+    Time: 56.17min
+  </p>
+</div>
+
+<div class="card">
+  <b>000000109313.jpg</b> <span class="tag-no">✗ no exact match</span> <span class="tag-no">✗ 50% overlap</span>
+  <div class="imgs">
+    <figure>
+      <img src="04_clean.png">
+      <div class="caption">Clean</div>
+    </figure>
+    <figure>
+      <img src="04_attacked.png">
+      <div class="caption">Attacked (what model sees)</div>
+    </figure>
+    <figure>
+      <img src="04_diff_10x.png">
+      <div class="caption">Difference ×10</div>
+    </figure>
+  </div>
+  <p class="gt"><b>Ground truth:</b> A man holding a tv remote and wii controller.</p>
+  <p class="clean"><b>Clean caption:</b> A man in a green shirt and black pants is standing in a room with wooden walls, holding a Wii remote, seemingly engaged in playing a video game.</p>
+  <p class="s1"><b>After Stage 1:</b> The image is a collage of historical scenes depicting various aspects of early 20th-century life, including a vintage advertisement for a product, a woman working at a sewing machine, and a man operating machinery in what appears to be a factory setting.</p>
+  <p class="target"><b>Target:</b> A coconut.</p>
+  <p class="result"><b>Final attacked:</b> A cat perches on a display stand in a store, surrounded by promotional materials for "object. coconutAide." bins and other items.</p>
+  <p class="stats">
+    Stage 1 loss: 2.75 &nbsp;|&nbsp;
+    Stage 2 loss: 0.0004 &nbsp;|&nbsp;
+    L-inf: 0.063 &nbsp;|&nbsp;
+    Time: 43.95min
+  </p>
+</div>
+</body></html>
